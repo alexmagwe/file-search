@@ -1,7 +1,9 @@
-#File-Search
+# File-Search with python
 
-###find any file in your system with as simple gui interface
+### find any file in your system with a simple gui interface
 
-#####if you change the root path make sure to re index
+#### **if you change the root path make sure to re index**
 
-![alt gui][file-gui.png "gui screenshot" ]
+##### search results are saved to a text file in the same directory
+
+![alt gui](file-gui.png "gui screenshot")
