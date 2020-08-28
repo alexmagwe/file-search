@@ -5,7 +5,7 @@ sg.ChangeLookAndFeel('Dark2')
 class Gui:
     def __init__(self):
         self.layout=[[sg.Text('Find',size=(10,1)),sg.Input(size=(40,1),focus=True,key='TERM'),sg.Radio('Contains',group_id='choice',key='CONTAINS',default=True),sg.Radio('Startswith',group_id='choice',key='STARTSWITH'),sg.Radio('Endswith',group_id='choice',key='ENDSWITH')],
-                     [sg.Text('Root path',size=(10,1)),sg.Input('/home/helios',size=(40,1),key='PATH'),sg.FolderBrowse('browse'),sg.Button('re_index',size=(10,1),key='REINDEX'),sg.Button('Search',size=(10,1),key='SEARCH',bind_return_key=True)],
+                     [sg.Text('Root path',size=(10,1)),sg.Input(size=(40,1),key='PATH'),sg.FolderBrowse('browse'),sg.Button('re_index',size=(10,1),key='REINDEX'),sg.Button('Search',size=(10,1),key='SEARCH',bind_return_key=True)],
                      [sg.Output(size=(100,30),key='OUTPUT')]]
         self.window=sg.Window('search Engine',self.layout)
         
@@ -83,6 +83,8 @@ def eventLoop():
             print('searching')
             s.search(values)
             print(f'>> {s.matches} matches found out of {s.records} records')
+            if s.matches>0:
+                print('\nresults saved to search_results.txt file\n')
             for res in s.results:
                 print(res)
                 
